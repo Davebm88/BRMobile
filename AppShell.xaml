@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:BRMobile.Controls"
+    xmlns:sys="clr-namespace:System;assembly=netstandard"
+    xmlns:views="clr-namespace:BRMobile.Views"
+    x:Class="BRMobile.AppShell"
+    x:Name="shell"
+    FlyoutBackgroundImage="tienda.png"
+    FlyoutBackgroundImageAspect="AspectFill"
+    FlyoutHeaderBehavior="CollapseOnScroll">
+
+    <Shell.Resources>
+        <Style x:Key="BaseStyle"
+               TargetType="Element">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#455A64" />
+            <Setter Property="Shell.BackgroundColor"
+                    Value="White" />
+            <Setter Property="Shell.TitleColor"
+                    Value="White" />
+            <Setter Property="Shell.DisabledColor"
+                    Value="#B4FFFFFF" />
+            <Setter Property="Shell.UnselectedColor"
+                    Value="#95FFFFFF" />
+        </Style>
+        <Style x:Key="EncuestasShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#455A64"/>
+        </Style>
+        <Style x:Key="TiendasShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#455A64"/>
+        </Style>
+        <Style x:Key="MenuShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#455A64"/>
+        </Style>
+        <Style x:Key="AboutShell"
+               TargetType="Element"
+               BasedOn="{StaticResource BaseStyle}">
+            <Setter Property="Shell.BackgroundColor"
+                    Value="#96d1ff" />
+        </Style>
+    </Shell.Resources>
+
+    <Shell.FlyoutHeader>
+        <controls:FlyoutHeader />
+    </Shell.FlyoutHeader>
+
+    <Shell.FlyoutFooter>
+        <controls:FlyoutFooter />
+    </Shell.FlyoutFooter>
+
+    <FlyoutItem Route="cap"
+                FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Route="encuestas"
+                      Style="{StaticResource EncuestasShell}"
+                      Title="Encuestas"
+                      Icon="survey.svg"
+                      ContentTemplate="{DataTemplate views:EncuestasPage}"/>
+        <ShellContent Route="tiendas"
+                      Style="{StaticResource TiendasShell}"
+                      Title="Tiendas"
+                      Icon="shopping_cart.svg"
+                      ContentTemplate="{DataTemplate views:TiendasPage}" />
+        <ShellContent Route="menu"
+                      Style="{StaticResource MenuShell}"
+                      Title="Menu"
+                      Icon="menu.svg"
+                      ContentTemplate="{DataTemplate views:MenuPage}" />
+    </FlyoutItem>
+    
+    <ShellContent Route="about"
+                  Style="{StaticResource AboutShell}"
+                  Title="Acerca de"
+                  Icon="info.png"
+                  ContentTemplate="{DataTemplate views:AboutPage}" />
+
+    <MenuItem Text="Ayuda"
+              IconImageSource="help.png"
+              Command="{Binding HelpCommand}"
+              CommandParameter="https://brantano.com.mx/" />
+
+</Shell>

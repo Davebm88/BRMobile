@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ManagerJR.BRMobile</name>
+    </assembly>
+    <members>
+        <member name="T:BRMobile.ViewModels.EncuestasDetalleViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:BRMobile.ViewModels.EncuestasDetalleViewModel.Tienda">
+            <inheritdoc cref="F:BRMobile.ViewModels.EncuestasDetalleViewModel.tienda"/>
+        </member>
+        <member name="F:BRMobile.ViewModels.EncuestasDetalleViewModel.detailsCommand">
+            <summary>The backing field for <see cref="P:BRMobile.ViewModels.EncuestasDetalleViewModel.DetailsCommand"/>.</summary>
+        </member>
+        <member name="P:BRMobile.ViewModels.EncuestasDetalleViewModel.DetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:BRMobile.ViewModels.EncuestasDetalleViewModel.Details(BRMobile.Models.Encuesta)"/>.</summary>
+        </member>
+        <member name="T:BRMobile.ViewModels.EncuestasViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:BRMobile.ViewModels.EncuestasViewModel.IsBusy">
+            <inheritdoc cref="F:BRMobile.ViewModels.EncuestasViewModel._isBusy"/>
+        </member>
+        <member name="F:BRMobile.ViewModels.EncuestasViewModel.detailsCommand">
+            <summary>The backing field for <see cref="P:BRMobile.ViewModels.EncuestasViewModel.DetailsCommand"/>.</summary>
+        </member>
+        <member name="P:BRMobile.ViewModels.EncuestasViewModel.DetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:BRMobile.ViewModels.EncuestasViewModel.Details(BRMobile.Models.Encuesta)"/>.</summary>
+        </member>
+        <member name="T:BRMobile.ViewModels.TiendasViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:BRMobile.ViewModels.TiendasViewModel.IsBusy">
+            <inheritdoc cref="F:BRMobile.ViewModels.TiendasViewModel._isBusy"/>
+        </member>
+        <member name="F:BRMobile.ViewModels.TiendasViewModel.detailsCommand">
+            <summary>The backing field for <see cref="P:BRMobile.ViewModels.TiendasViewModel.DetailsCommand"/>.</summary>
+        </member>
+        <member name="P:BRMobile.ViewModels.TiendasViewModel.DetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:BRMobile.ViewModels.TiendasViewModel.Details(BRMobile.Models.Tienda)"/>.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Tienda">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Tienda" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Tienda">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Tienda" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+    </members>
+</doc>

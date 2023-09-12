@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BRMobile.Controls.FlyoutHeader"
+             Title="FlyoutHeader">
+    <Grid BackgroundColor="Black">
+        <Image Aspect="AspectFill"
+               Source="survey.png"
+               Opacity="0.6"/>
+        <Label Text="CAP"
+               TextColor="White"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center" />
+    </Grid>
+</ContentPage>

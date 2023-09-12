@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:BRMobile.Controls"
+             xmlns:viewmodel="clr-namespace:BRMobile.ViewModels"
+             x:DataType="viewmodel:TiendasViewModel"
+             xmlns:views="clr-namespace:BRMobile.Views"
+             xmlns:model="clr-namespace:BRMobile.Models"
+             x:Class="BRMobile.Views.TiendasPage">
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor" 
+                                        Value="#546DFE" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <Shell.SearchHandler>
+        <controls:TiendaSearchHandler Tiendas="{x:Static viewmodel:TiendasViewModel.SearchTiendas}"
+                                      DisplayMemberName="Descripcion" ShowsResults="True" QueryIcon="search" ClearIcon="cancel"
+                                      SearchBoxVisibility="Collapsible" Placeholder="Buscar Tienda"
+                                      SelectedItemNavigationTarget="{x:Type views:EncuestasDetallePage }">
+
+            <controls:TiendaSearchHandler.ItemTemplate>
+                <DataTemplate x:DataType="model:Tienda">
+                    <HorizontalStackLayout Spacing="10" Margin="10">
+
+                        <Label Text="{Binding Id}"></Label>
+                        <Label Text="{Binding Descripcion}"></Label>
+
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </controls:TiendaSearchHandler.ItemTemplate>
+        </controls:TiendaSearchHandler>
+    </Shell.SearchHandler>
+
+    <ScrollView>
+        <VerticalStackLayout>
+            <ActivityIndicator Color="Yellow" IsRunning="True" IsVisible="{Binding IsBusy}" Margin="20,100,20,20"></ActivityIndicator>
+            <CollectionView ItemsSource="{Binding Tiendas}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Tienda">
+                        <Frame>
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:TiendasViewModel}}, Path=DetailsCommand}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                            </Frame.GestureRecognizers>
+                            <HorizontalStackLayout Spacing="10">
+                                <Label Text="{Binding Id}" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                <Label Text="{Binding Descripcion}" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                                <Label Text="{Binding Ubicacion}" FontAttributes="Bold" VerticalOptions="Center"></Label>
+                            </HorizontalStackLayout>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

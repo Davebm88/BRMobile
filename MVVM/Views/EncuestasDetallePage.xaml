@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:BRMobile.ViewModels"
+             xmlns:views="clr-namespace:BRMobile.Views"
+             xmlns:model="clr-namespace:BRMobile.Models"
+             x:Class="BRMobile.Views.EncuestasDetallePage"
+             x:DataType="viewmodel:EncuestasDetalleViewModel"
+             Title="Detalle">
+    <ScrollView>
+        <VerticalStackLayout
+            Margin="20"
+            Spacing="10">
+            <Label Text="{Binding Tienda.Id}"/>
+            <Label Text="{Binding Tienda.Descripcion}"/>
+            <Label Text="{Binding Tienda.Ubicacion}"/>
+            <CollectionView 
+                ItemsSource="{Binding Encuestas}">
+                <CollectionView.Header>
+                    <StackLayout BackgroundColor="#145952">
+                        <Label Margin="20,0,0,0"
+                               Text="Recientes"
+                               TextColor="White"
+                               FontSize="Large"
+                               FontAttributes="Bold"/>
+                    </StackLayout>
+                </CollectionView.Header>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate x:DataType="model:Encuesta">
+                        <StackLayout>
+                            <Frame
+                                Margin="20"
+                                BorderColor="#41A693"
+                                BackgroundColor="#F2F2F2"
+                                CornerRadius="5"
+                                HasShadow="True"
+                                HeightRequest="150"
+                                WidthRequest="250"
+                                HorizontalOptions="Center"
+                                VerticalOptions="CenterAndExpand">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:EncuestasDetalleViewModel}}, Path=DetailsCommand}" CommandParameter="{Binding .}"></TapGestureRecognizer>
+                                </Frame.GestureRecognizers>
+                                <VerticalStackLayout Spacing="5">
+                                    <HorizontalStackLayout>
+                                        <Label Text="{Binding IdTienda}" FontSize="Large" FontAttributes="Bold"/>
+                                        <Label Text="{Binding Tienda}" FontSize="Large" FontAttributes="Bold"/>
+                                    </HorizontalStackLayout>
+                                    <Label Text="{Binding Fecha, StringFormat='Fecha: {0}'}"/>
+                                    <Label Text="{Binding FechaModificacion, StringFormat='Ultima Modificación: {0}'}"/>
+                                    <Label Text="{Binding Cumplimiento, StringFormat='Cumplimiento: {0}%'}"/>
+                                    <Label Text="{Binding Estatus, StringFormat='Estatus: {0}%'}"/>
+                                </VerticalStackLayout>
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+
+            </CollectionView>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
